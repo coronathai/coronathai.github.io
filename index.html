@@ -18,8 +18,10 @@
     </style>
 </head>
 <body>
-    <h1 style="color: white; font-size:7em; margin: 30px 0 0 0;">43</h1>
-    <p style="color:white;">has been infected in Thai. <span style="color:black;">1 incresed.</span></p>
+    <h1 style="color: white; font-size:7em; margin: 30px 0 0 0;" id="infections">Loading...</h1>
+    <p style="color:white;">has been infected in Thai.</p>
+    <p style="color: black"><p id="incresed" style="color: white;">Loading...</p> incresed from last update, <p id="deaths" style="color:white;">Loading...</p> deaths, and <p id="invest" style="color:white;">Loading...</p> people are under investigation / treatment.</p>
+
     <p style="color:gray">Updated 19:00 2 March 2020, Updates everyday 19:00</p>
     <br>
     <br>
@@ -33,5 +35,22 @@
     <br>
     <br>
     <p>This site is based by articles from WHO Thai.</p>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        var infections, incresed, deaths, investigations;
+        $.ajax({
+            url: "https://coronathai.github.io/people.json/"
+        }).done(function(data) {
+            infections = data.infections;
+            incresed = data.incresed;
+            deaths = data.deaths;
+            investigations = data.invest;
+        }).fail(function() {
+            alert("Connection error.");
+        });
+        $("#infections").text(infections);
+        $("#incresed").text(incresed);
+        $("#")
+    </script>
 </body>
 </html>
