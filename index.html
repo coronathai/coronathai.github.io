@@ -18,9 +18,9 @@
     </style>
 </head>
 <body>
-    <h1 style="color: white; font-size:7em; margin: 30px 0 0 0;" id="infections">Loading...</h1>
+    <h1 style="color: white; font-size:7em; margin: 30px 0 0 0;" id="infections">43</h1>
     <p style="color:white;">has been infected in Thai.</p>
-    <p style="color: black"><p id="incresed" style="color: white;">Loading...</p> incresed from last update, <p id="deaths" style="color:white;">Loading...</p> deaths, and <p id="invest" style="color:white;">Loading...</p> people are under investigation / treatment.</p>
+    <p style="color: black"><p id="incresed" style="color: white;">1</p> incresed from last update, <p id="deaths" style="color:white;">1</p> deaths, and <p id="invest" style="color:white;">1421</p> people are under investigation / treatment.</p>
 
     <p style="color:gray">Updated <p id="date">19:00 2 March 2020</p>, Updates everyday(except weekends) 19:00</p>
     <br>
@@ -35,27 +35,6 @@
     <br>
     <br>
     <p>This site is based by articles from WHO Thai and Thai Ministry of Public Health.</p>
-    <br>
-    <p onclick="alert('We use ajax to load data from servers. Please check your internet connection again and reload.')">Having problems with infinite loading?</p>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script>
-        var infections, incresed, deaths, investigations, date;
-        $.ajax({
-            url: "https://coronathai.github.io/people.json"
-        }).done(function(data) {
-            infections = data.infections;
-            incresed = data.incresed;
-            deaths = data.deaths;
-            investigations = data.invest;
-            date = data.date;
-        }).fail(function() {
-            alert("Connection error.");
-        });
-        $("#infections").text(infections);
-        $("#incresed").text(incresed);
-        $("#deaths").text(deaths);
-        $("#invest").text(investigations);
-        $("#date").text(date);
-    </script>
+    <br><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </body>
 </html>
